@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route method="GET" url="/V1/affiliatemembers/list">
+		<service class="Demo\AffiliateMembers\Api\AffiliatemembersRepositoryInterface" method="getAffiliatemembers"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affiliatemembers">
+		<service class="Demo\AffiliateMembers\Api\AffiliatemembersRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/affiliatemember/:affiliatememberId">
+		<service class="Demo\AffiliateMembers\Api\AffiliatemembersRepositoryInterface" method="getById"/>
+		<resources>
+			<resource ref="anonymous"/>
+		</resources>
+	</route>
+</routes>
